@@ -51,6 +51,16 @@
             text-align: center;
             margin: 10px;
         }
+        .cheese-container {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0 30px;
+        }
+        .cheese-container img {
+            max-width: 220px;
+            width: 40vw;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -180,8 +190,9 @@
         </a>
         <h1 class="header-text">Marko's Classroom</h1>
         <div class="nav-right-align" style="gap: 10px;">
-            <!--<button class="center-button nav-button-large" onclick="location.href='active/index.html'">Proxy (NEW)</button>-->
-            <button class="center-button nav-button-large" onclick="location.href='/s/games.html'">Games</button>
+        <button class="center-button nav-button-large right-fix" onclick="location.href='/s/games.html'">Games</button>
+        <button class="center-button nav-button-large" onclick="location.href='/active/index.html'">Proxy</button>
+        <button class="center-button nav-button-large" onclick="location.href='/s/settings.html'">Settings</button>
         </div>
     </header>
 
@@ -197,6 +208,10 @@
         <!--<a href="/active/game.html?game=roblox" class="game-button">
             <img src="https://images.rbxcdn.com/7c5fe83dffa97250aaddd54178900ea7.png">
             <p>Roblox</p>
+        </a>-->
+        <!--<a href="/active/game.html?game=movies" class="game-button">
+            <img src="https://watch.spencerdevs.xyz/images/spenflix-logo.png">
+            <p>Movies</p>
         </a>-->
         <a href="game.html?game=1on1soccer" class="game-button">
             <img src="g/load/1on1soccer/IMG_5318.jpeg">
@@ -1139,7 +1154,11 @@
             <p>Zooplop</p>
         </a>
     </div>
-    
+
+    <div class="cheese-container">
+        <img src="/s/assets/cheese.png">
+    </div>
+    <p class="center">cheese</p>
     <footer>
         <p class="footer-text">nuh uh dont look here pick a game instead <a href="/privacy-policy.html">Privacy Policy</a></p>
     </footer>

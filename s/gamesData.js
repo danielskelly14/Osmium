@@ -1652,5 +1652,13 @@ let games = [
         "iframe": "g/load/zooplop/index.html",
         "img": "g/images/zooplop.png",
         "identifier": "zooplop"
-    }
+    },
+    {
+        "name": "Movies",
+        "proxy": "https://watch.spencerdevs.xyz/",
+        "proxy2": "https://watch.spencerdevs.xyz/",
+        "server": 2,
+        "img": "https://watch.spencerdevs.xyz/images/spenflix-logo.png",
+        "identifier": "movies"
+    },
 ];

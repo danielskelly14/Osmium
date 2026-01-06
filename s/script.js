@@ -1,26 +1,29 @@
-particlesJS("particles-js", {
-    particles: {
-        number: { value: 70 },
-        shape: { type: "circle" },
-        opacity: { value: 1 }, 
-        size: { value: 2, random: true }, 
-        move: {
-            enable: true,
-            speed: 12, 
-            straight: false, 
-            out_mode: "out"
+// Check if particles are enabled (default true)
+if (localStorage.getItem('particlesEnabled') !== 'false') {
+    particlesJS("particles-js", {
+        particles: {
+            number: { value: 70 },
+            shape: { type: "circle" },
+            opacity: { value: 1 }, 
+            size: { value: 2, random: true }, 
+            move: {
+                enable: true,
+                speed: 12, 
+                straight: false, 
+                out_mode: "out"
+            },
+            line_linked: { enable: false }, 
+            color: { value: ["#ffffff", "#d0e8ff", "#9fb2cf", "#afebff", "#b0c8d8"] } 
         },
-        line_linked: { enable: false }, 
-        color: { value: ["#ffffff", "#d0e8ff", "#9fb2cf", "#afebff", "#b0c8d8"] } 
-    },
-    interactivity: {
-        detect_on: "canvas",
-        events: {
-            onhover: { enable: false }, 
-            onclick: { enable: false }
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: { enable: false }, 
+                onclick: { enable: false }
+            }
         }
-    }
-});
+    });
+}
 
 function isTypingInField(e){
     var el = e.target;
@@ -153,4 +156,79 @@ window.addEventListener('DOMContentLoaded', function(){
     }
 
 })();
+
+/* --- Tab Cloak System (persists across all pages) --- */
+(function(){
+    // Tab cloak presets - available globally
+    window.CLOAKS = {
+        google: { title: 'Google', icon: '/s/assets/google.ico' },
+        classroom: { title: 'Google Classroom', icon: '/s/assets/classroom.ico' },
+        drive: { title: 'My Drive - Google Drive', icon: '/s/assets/drive.png' },
+        gmail: { title: 'Gmail', icon: '/s/assets/gmail.ico' },
+        ixl: { title: 'IXL | Dashboard', icon: '/s/assets/ixl.png' },
+        meet: { title: 'Google Meet', icon: '/s/assets/meet.png' },
+        docs: { title: 'Document - Google Docs', icon: '/s/assets/docs.ico' },
+        sheets: { title: 'Spreadsheet - Google Sheets', icon: '/s/assets/sheets.ico' },
+        slides: { title: 'Presentation - Google Slides', icon: '/s/assets/slides.ico' }
+    };
+
+    window.DEFAULT_CLOAK = { title: "Markos's Classroom", icon: '/s/dogfavi.png' };
+
+    // Apply cloak immediately on page load (before DOMContentLoaded)
+    function applyTabCloak() {
+        try {
+            var saved = localStorage.getItem('tabCloak');
+            if (!saved) return;
+            
+            var data = JSON.parse(saved);
+            if (!data || !data.title || !data.icon) return;
+
+            // Set title immediately
+            document.title = data.title;
+
+            // Set favicon
+            var favicon = document.querySelector("link[rel='icon']");
+            if (!favicon) {
+                favicon = document.createElement('link');
+                favicon.rel = 'icon';
+                document.head.appendChild(favicon);
+            }
+            favicon.href = data.icon;
+        } catch (e) {
+            // silently fail if localStorage is unavailable or data is corrupted
+        }
+    }
+
+    // Apply cloak as early as possible
+    applyTabCloak();
+
+    // Expose global function for settings page to call
+    window.applyCloakSelection = function(key) {
+        var preset = window.CLOAKS[key] || window.DEFAULT_CLOAK;
+        document.title = preset.title;
+
+        var favicon = document.querySelector("link[rel='icon']");
+        if (!favicon) {
+            favicon = document.createElement('link');
+            favicon.rel = 'icon';
+            document.head.appendChild(favicon);
+        }
+        favicon.href = preset.icon;
+
+        localStorage.setItem('tabCloak', JSON.stringify({ key: key, title: preset.title, icon: preset.icon }));
+        
+        // Update status if on settings page
+        var status = document.getElementById('cloakStatus');
+        if (status) {
+            status.textContent = 'Current: ' + preset.title;
+        }
+    };
+
+})();
+
+/* --- Particles Toggle --- */
+window.toggleParticles = function() {
+    var isEnabled = localStorage.getItem('particlesEnabled') !== 'false';
+    localStorage.setItem('particlesEnabled', isEnabled ? 'false' : 'true');
+};
 

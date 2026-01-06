@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QYPYXGT59Q"></script>
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QYPYXGT59Q');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3761613789479778" crossorigin="anonymous"></script>
+  
+  <meta charset="UTF-8">
+    <title>Markos's Classroom</title>
+    <link rel="icon" href="/s/dogfavi.png">
+    <link rel="stylesheet" href="/main.css">
+    <script src="/s/particles.js"></script>
+    <script defer src="/s/script.js"></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+      <header class="header nav-container" role="banner">
+        <a href="/index.html" class="dog-icon-link">
+            <img src="/s/dog.png" class="header-img">
+        </a>
+        <h1 class="header-text header-title">Marko's Classroom</h1>
+        <div class="nav-right-align" style="gap: 10px;">
+        <button class="center-button nav-button-large right-fix" onclick="location.href='/s/games.html'">Games</button>
+        <button class="center-button nav-button-large" onclick="location.href='/active/index.html'">Proxy</button>
+        <button class="center-button nav-button-large" onclick="location.href='/s/settings.html'">Settings</button>
+        </div>
+    </header>
+
+    <main class="content" style="padding: 20px; display: flex; justify-content: center;">
+    
+    <div class="container center" style="max-width: 700px; width: 100%; display: flex; flex-direction: column; gap: 16px;">
+        <h2 style="margin: 0 0 6px 0;">Particles</h2>
+        <p style="margin: 0 0 10px 0;">Toggle the background particle animation on or off. <br>Refresh the page to see changes.</p>
+        <button id="particlesToggle" class="center-button nav-button-large">Particles: ON</button>
+        <p id="particlesStatus" style="margin: 8px 0 0 0; font-size: 0.9rem; color: #ccc;">Current: Enabled</p>
+    </div>
+
+
+    <div class="container center" style="max-width: 700px; width: 100%; display: flex; flex-direction: column; gap: 16px;">
+        <h2 style="margin: 0 0 6px 0;">Tab Cloak (title + icon)</h2>
+        <p style="margin: 0 0 10px 0;">Pick a disguise for this tab. It updates the tab title and favicon immediately.</p>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+        <select id="cloakPicker" class="center-button nav-button-large" style="flex: 1 1 240px; min-width: 220px;">
+            <option value="google">Google</option>
+            <option value="classroom">Google Classroom</option>
+            <option value="drive">Google Drive</option>
+            <option value="gmail">Gmail</option>
+            <option value="ixl">IXL</option>
+            <option value="meet">Google Meet</option>
+            <option value="docs">Google Docs</option>
+            <option value="sheets">Google Sheets</option>
+            <option value="slides">Google Slides</option>
+        </select>
+        <button id="applyCloak" class="center-button nav-button-large">Apply cloak</button>
+        <button id="resetCloak" class="center-button nav-button-large">Reset</button>
+        </div>
+        <p id="cloakStatus" style="margin: 8px 0 0 0; font-size: 0.9rem; color: #ccc;">Current: Markos's Classroom</p>
+    </div>
+
+    <div class="container center" style="max-width: 700px; width: 100%; display: flex; flex-direction: column; gap: 16px;">
+        <h2 style="margin: 0 0 6px 0;">About:Blank Cloaker</h2>
+        <p style="margin: 0 0 10px 0;">Double-click the button to open this page inside an about:blank window while redirecting the current tab.</p>
+        <button id="cloaker" class="center-button nav-button-large" style="width: 100%;">Cloak (double-click)</button>
+        <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">If the popup is blocked, allow popups for this site and try again.</p>
+    </div>
+    
+    </main>
+
+    <script>
+      // Tab cloak presets and applyCloakSelection are now in script.js (global)
+      // This page just needs to wire up the UI controls
+      
+      function updateParticlesUI() {
+        try {
+          const enabled = localStorage.getItem('particlesEnabled') !== 'false';
+          const button = document.getElementById('particlesToggle');
+          const status = document.getElementById('particlesStatus');
+          
+          if (button) {
+            button.textContent = 'Particles: ' + (enabled ? 'ON' : 'OFF');
+          }
+          if (status) {
+            status.textContent = 'Current: ' + (enabled ? 'Enabled' : 'Disabled');
+          }
+        } catch (e) {
+          // ignore
+        }
+      }
+      
+      function updateCloakUI() {
+        try {
+          const saved = JSON.parse(localStorage.getItem('tabCloak'));
+          const select = document.getElementById('cloakPicker');
+          const status = document.getElementById('cloakStatus');
+          
+          if (saved && saved.key && window.CLOAKS[saved.key]) {
+            if (select) select.value = saved.key;
+            if (status) status.textContent = 'Current: ' + saved.title;
+          } else {
+            if (status) status.textContent = 'Current: ' + window.DEFAULT_CLOAK.title;
+          }
+        } catch (e) {
+          // ignore
+        }
+      }
+
+      // Opens a new about:blank tab, loads this page in an iframe there, and redirects the current tab
+      function openCloak() {
+        const currentUrl = window.location.href;
+        const newTab = window.open();
+
+        if (!newTab) {
+          alert('Popup blocked. Please allow popups for this site and try again.');
+          return;
+        }
+
+        // Mirror title
+        newTab.document.title = document.title;
+
+        // Mirror favicon if present
+        const faviconElement = document.querySelector("link[rel='icon']");
+        if (faviconElement && faviconElement.href) {
+          const favicon = newTab.document.createElement('link');
+          favicon.rel = 'icon';
+          favicon.href = faviconElement.href;
+          newTab.document.head.appendChild(favicon);
+        }
+
+        // Fill the about:blank page with a full-frame iframe
+        newTab.document.body.style.margin = '0';
+        newTab.document.body.style.padding = '0';
+        newTab.document.body.style.overflow = 'hidden';
+
+        const iframe = newTab.document.createElement('iframe');
+        iframe.style.border = 'none';
+        iframe.style.width = '100%';
+        iframe.style.height = '100vh';
+        iframe.style.margin = '0';
+        iframe.style.display = 'block';
+        iframe.src = currentUrl;
+        newTab.document.body.appendChild(iframe);
+
+        // Redirect current tab to a neutral site
+        window.location.replace('https://ixl.com');
+
+        // If the cloak tab is closed, clear the reference
+        const checkInterval = setInterval(() => {
+          if (newTab.closed) {
+            clearInterval(checkInterval);
+          }
+        }, 500);
+      }
+
+      // Attach handler on double-click for better accidental-click protection
+      document.addEventListener('DOMContentLoaded', () => {
+        // wire particles toggle
+        const particlesBtn = document.getElementById('particlesToggle');
+        if (particlesBtn) {
+          particlesBtn.addEventListener('click', () => {
+            if (window.toggleParticles) {
+              window.toggleParticles();
+              updateParticlesUI();
+            }
+          });
+        }
+        updateParticlesUI();
+
+        // wire tab cloaker controls
+        const applyBtn = document.getElementById('applyCloak');
+        const resetBtn = document.getElementById('resetCloak');
+        const select = document.getElementById('cloakPicker');
+
+        if (applyBtn && select) {
+          applyBtn.addEventListener('click', () => window.applyCloakSelection(select.value));
+        }
+        if (resetBtn) {
+          resetBtn.addEventListener('click', () => {
+            localStorage.removeItem('tabCloak');
+            window.applyCloakSelection(null);
+            if (select) select.value = 'google';
+          });
+        }
+
+        updateCloakUI();
+
+        const cloakButton = document.getElementById('cloaker');
+        if (cloakButton) {
+          cloakButton.addEventListener('dblclick', openCloak);
+        }
+      });
+    </script>
+</body>
+<footer>
+  <p class="footer-text">enjoy the game, <a href="/privacy-policy.html">Privacy Policy<a></p>
+</footer>
