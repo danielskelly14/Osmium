@@ -1,10 +1,13 @@
 let games = [
     {
+        "name": "Others",
+        "iframe": "/reactive/embed.html#https://nowgg.fun",
+        "img": "g/images/nowggfun.png",
+        "identifier": "nowggfun"
+    },
+    {
         "name": "Roblox",
-        "proxy": "https://69.ip.nowgg.fun/apps/a/19900/b.html",
-        "proxy2": "https://discord.com/login",
-        "proxy3": "https://now.gg/apps/a/19900/b.html",
-        "server": 3,
+        "iframe": "/reactive/embed.html#https://199.ip.nowgg.fun/apps/a/19900/b.html",
         "img": "https://images.rbxcdn.com/7c5fe83dffa97250aaddd54178900ea7.png",
         "identifier": "roblox"
     },
@@ -1652,13 +1655,5 @@ let games = [
         "iframe": "g/load/zooplop/index.html",
         "img": "g/images/zooplop.png",
         "identifier": "zooplop"
-    },
-    {
-        "name": "Movies",
-        "proxy": "https://watch.spencerdevs.xyz/",
-        "proxy2": "https://watch.spencerdevs.xyz/",
-        "server": 2,
-        "img": "https://watch.spencerdevs.xyz/images/spenflix-logo.png",
-        "identifier": "movies"
-    },
+    }
 ];
