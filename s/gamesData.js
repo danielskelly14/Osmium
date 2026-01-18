@@ -12,6 +12,19 @@ let games = [
         "identifier": "roblox"
     },
     {
+        "name": "Movies",
+        "iframe": "/reactive/embed.html#https://watch.spencerdevs.xyz/",
+        "img": "assets/movies.png",
+        "identifier": "movies"
+    },
+    {
+        "name": "Android",
+        "iframe": "/reactive/embed.html#https://199.ip.nowgg.fun/apps/uncube/7074/now.html",
+        "img": "https://nowgg.fun/img/android.jpg",
+        "identifier": "android"
+    },
+    //alphebetical order from here
+    {
         "name": "1 on 1 soccer",
         "gamePage": "game.html?game=g/load/1on1soccer/index.html",
         "iframe": "g/load/1on1soccer/index.html",
@@ -1136,21 +1149,21 @@ let games = [
         "gamePage": "game.html?game=g/load/redball/1/index.html",
         "iframe": "g/load/redball/1/index.html",
         "img": "g/load/redball/IMG_5315.jpeg",
-        "identifier": "1"
+        "identifier": "rb1"
     },
     {
         "name": "Red Ball 4 Volume 2",
         "gamePage": "game.html?game=g/load/redball/2/index.html",
         "iframe": "g/load/redball/2/index.html",
         "img": "g/load/redball/IMG_5316.webp",
-        "identifier": "2"
+        "identifier": "rb2"
     },
     {
         "name": "Red Ball 4 Volume 3",
         "gamePage": "game.html?game=g/load/redball/3/index.html",
         "iframe": "g/load/redball/3/index.html",
         "img": "g/load/redball/IMG_5317.webp",
-        "identifier": "3"
+        "identifier": "rb3"
     },
     {
         "name": "Retro Bowl",
@@ -1171,35 +1184,35 @@ let games = [
         "gamePage": "game.html?game=g/load/riddleschool/1/index.html",
         "iframe": "g/load/riddleschool/1/index.html",
         "img": "g/load/riddleschool/IMG_5260.png",
-        "identifier": "1"
+        "identifier": "r1"
     },
     {
         "name": "Riddle School 2",
         "gamePage": "game.html?game=g/load/riddleschool/2/index.html",
         "iframe": "g/load/riddleschool/2/index.html",
         "img": "g/load/riddleschool/IMG_5261.png",
-        "identifier": "2"
+        "identifier": "r2"
     },
     {
         "name": "Riddle School 3",
         "gamePage": "game.html?game=g/load/riddleschool/3/index.html",
         "iframe": "g/load/riddleschool/3/index.html",
         "img": "g/load/riddleschool/IMG_5262.png",
-        "identifier": "3"
+        "identifier": "r3"
     },
     {
         "name": "Riddle School 4",
         "gamePage": "game.html?game=g/load/riddleschool/4/index.html",
         "iframe": "g/load/riddleschool/4/index.html",
         "img": "g/load/riddleschool/IMG_5263.png",
-        "identifier": "4"
+        "identifier": "r4"
     },
     {
         "name": "Riddle School 5",
         "gamePage": "game.html?game=g/load/riddleschool/5/index.html",
         "iframe": "g/load/riddleschool/5/index.html",
         "img": "g/load/riddleschool/IMG_5264.png",
-        "identifier": "5"
+        "identifier": "r5"
     },
     {
         "name": "Riddle Transfer",

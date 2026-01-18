@@ -1,1 +1,2 @@
 A static scramjet implementation similar to /staticsj but now uses jsdelivr cdn's to significantly reduce the size of the codebase.
+original from [https://github.com/Destroyed12121/StaticScram](https://github.com/Destroyed12121/StaticScram)

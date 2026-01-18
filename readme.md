@@ -1,3 +1,5 @@
+IF YOU ARE GOING TO DMCA EMAIL ME AT marko.vityk@gmail.com
+read privacy policy [here](https://marko.wiki.gd/privacy-policy.html)
 ## Welcome to Marko's Classroom github repository!
 
 ### Marko's Classroom is a free website with
@@ -14,20 +16,13 @@ check out my other websites on my github
 todo
  - make website look beter
  - add more games
+ - fix proxy cuz some websites ssl is broken? ex: [this](https://watch.spencerdevs.xyz/)
 
-places we stole games from
- - brunys ixl (or one of the githubs idk)
- - arsenic
- - nowgg.fun
- - SOON
-   - gn-math (idk where their source code is but we have their ports)
-   - petezahs games
-   - pizza edition (doesnt have source code :< )
-   - froggies arcade
+\[redacted\]
 
 thanks for reading
 also we are open to contributions ig via pull requests
 this website is fully static
 
-current version 1.4 i think
+current version 2.4 i think
 if contact is required email me at marko.vityk@gmail.com
