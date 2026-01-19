@@ -187,6 +187,7 @@
         </div>
   </header>
   <p>&nbsp;</p>
+  <p id="warning" class="center"></p>
   <div id="game-bar" class="game-bar">
     <div class="game-bar-left">
       <img id="game-bar-img" src="" alt="" class="game-bar-img" style="display:none;">
@@ -214,6 +215,12 @@
       const iframe = document.getElementById("game");
       const barImg = document.getElementById("game-bar-img");
       const barTitle = document.getElementById("game-bar-title");
+      const warningEl = document.getElementById("warning");
+      
+      if (gameObj && gameObj.warning) {
+        warningEl.textContent = gameObj.warning;
+      }
+      
       if (gameObj) {
         iframe.src = gameObj.iframe;
         barImg.src = gameObj.img;

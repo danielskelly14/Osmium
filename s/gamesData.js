@@ -3,13 +3,43 @@ let games = [
         "name": "Others",
         "iframe": "/reactive/embed.html#https://nowgg.fun",
         "img": "g/images/nowggfun.png",
-        "identifier": "nowggfun"
+        "identifier": "nowggfun",
+        "warning": "note that this doesn't work in firefox, and if it doesnt load, try going to the proxy and opening a website first before coming back"
     },
     {
         "name": "Roblox",
         "iframe": "/reactive/embed.html#https://199.ip.nowgg.fun/apps/a/19900/b.html",
         "img": "https://images.rbxcdn.com/7c5fe83dffa97250aaddd54178900ea7.png",
-        "identifier": "roblox"
+        "identifier": "roblox",
+        "warning": "note that this doesn't work in firefox, and if it doesnt load, try going to the proxy and opening a website first before coming back"
+    },
+    {
+        "name": "Stumble Guys",
+        "iframe": "/reactive/embed.html#https://199.ip.nowgg.fun/apps/a/10011/b.html",
+        "img": "https://nowgg.fun/img/stumbleguys.jpg",
+        "identifier": "stumbleguys",
+        "warning": "note that this doesn't work in firefox, and if it doesnt load, try going to the proxy and opening a website first before coming back"
+    },
+    {
+        "name": "Fortnite",
+        "iframe": "/reactive/embed.html#https://199.ip.nowgg.fun/apps/aptoide/5874/aptoide.html?deep_link=aptoidesearch://com.epicgames.fortnite",
+        "img": "https://nowgg.fun/img/fortnite.png",
+        "identifier": "fortnite",
+        "warning": "note that this doesn't work in firefox, and if it doesnt load, try going to the proxy and opening a website first before coming back"
+    },
+    {
+        "name": "Call of Duty Mobile",
+        "iframe": "/reactive/embed.html#https://199.ip.nowgg.fun/apps/a/10008/b.html",
+        "img": "https://nowgg.fun/img/cod.jpg",
+        "identifier": "cod",
+        "warning": "note that this doesn't work in firefox, and if it doesnt load, try going to the proxy and opening a website first before coming back"
+    },
+    {
+        "name": "real Geometry Dash",
+        "iframe": "/reactive/embed.html#https://199.ip.nowgg.fun/apps/robtop-games/1400/geometry-dash.html",
+        "img": "https://nowgg.fun/img/geodash.png",
+        "identifier": "gmdash",
+        "warning": "note that this doesn't work in firefox, and if it doesnt load, try going to the proxy and opening a website first before coming back"
     },
     {
         "name": "Movies",
@@ -725,28 +755,28 @@ let games = [
         "identifier": "funny-shooter-2"
     },
     {
-        "name": "Geometry Dash",
+        "name": "Geometry Dash Scratch",
         "gamePage": "game.html?game=g/load/geometrydash/index.html",
         "iframe": "g/load/geometrydash/index.html",
         "img": "g/load/geometrydash/splash.png",
         "identifier": "geometrydash"
     },
     {
-        "name": "Geometry Dash Meltdown",
+        "name": "Geometry Dash Meltdown Scratch",
         "gamePage": "game.html?game=g/load/geometrydashmeltdown/index.html",
         "iframe": "g/load/geometrydashmeltdown/index.html",
         "img": "g/load/geometrydashmeltdown/gdmd.png",
         "identifier": "geometrydashmeltdown"
     },
     {
-        "name": "Geometry Dash Sub Zero",
+        "name": "Geometry Dash Sub Zero Scratch",
         "gamePage": "game.html?game=g/load/geometrydashsubzero/index.html",
         "iframe": "g/load/geometrydashsubzero/index.html",
         "img": "g/load/geometrydashsubzero/gdsz.png",
         "identifier": "geometrydashsubzero"
     },
     {
-        "name": "Geometry Dash World Toxic Factory",
+        "name": "Geometry Dash World Toxic Factory Scratch",
         "gamePage": "game.html?game=g/load/geometrydashworld/index.html",
         "iframe": "g/load/geometrydashworld/index.html",
         "img": "g/load/geometrydashworld/gdw.png",

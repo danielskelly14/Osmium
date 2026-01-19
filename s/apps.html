@@ -43,9 +43,12 @@
         }
         .game-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fill, 150px);
             gap: 15px;
             padding: 20px;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 100%;
         }
         .game-button {
             text-align: center;
@@ -64,125 +67,6 @@
     </style>
 </head>
 <body>
-    <!-- popup overlay cuz anas
-<div id="noticePopupOverlay" class="popup-overlay">
-  <div class="popup-box">
-    <h2>NOTICE</h2>
-    <p>
-      markos classroom has maintinence like on the 12th so yes
-    </p>
-    <button id="closePopup">Close</button>
-  </div>
-</div>
-
-<style>
-  /* Overlay background */
-  .popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(8px);
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
-
-  .popup-overlay.active {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  /* Popup Box */
-  .popup-box {
-    background: #111;
-    color: #fff;
-    padding: 25px 30px;
-    border-radius: 12px;
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-    animation: fadeInUp 0.4s ease;
-  }
-
-  .popup-box h2 {
-    margin: 0 0 15px;
-    font-size: 24px;
-    color: #ff4d4d;
-  }
-
-  .popup-box p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    line-height: 1.5;
-  }
-
-  .popup-box button {
-    padding: 10px 20px;
-    background: #ff4d4d;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.25s ease;
-  }
-
-  .popup-box button:hover {
-    background: #ff1a1a;
-  }
-
-  /* Animation */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(25px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
-
-<script>
-  // Cookie helpers
-  function setCookie(name, value, days) {
-    const date = new Date();
-    date.setTime(date.getTime() + (days*24*60*60*1000));
-    document.cookie = name + "=" + value + ";expires=" + date.toUTCString() + ";path=/";
-  }
-
-  function getCookie(name) {
-    const cookies = document.cookie.split(';');
-    for (let c of cookies) {
-      c = c.trim();
-      if (c.indexOf(name + "=") === 0) {
-        return c.substring((name + "=").length, c.length);
-      }
-    }
-    return "";
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    if (!getCookie("maintenanceNotice")) {
-      document.getElementById("noticePopupOverlay").classList.add("active");
-    }
-
-    document.getElementById("closePopup").addEventListener("click", () => {
-      document.getElementById("noticePopupOverlay").classList.remove("active");
-      setCookie("maintenanceNotice", "viewed", 2); // lasts 30 days
-    });
-  });
-</script>
-    -->
     <div id="particles-js"></div>
     <header class="header nav-container">
         <a href="/index.html" class="dog-icon-link">
