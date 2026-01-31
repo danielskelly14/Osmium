@@ -16,7 +16,7 @@ check out my other websites on my github
 todo
  - make website look beter
  - add more games
- - fix proxy cuz some websites ssl is broken? ex: [this](https://watch.spencerdevs.xyz/)
+ - fix proxy cuz some websites ssl is broken? ex: \[redacted\]
 
 \[redacted\]
 

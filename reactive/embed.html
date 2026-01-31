@@ -274,7 +274,24 @@
                         });
                         const controllerTimeout = new Promise(resolve => setTimeout(resolve, 5000));
                         await Promise.race([controllerPromise, controllerTimeout]);
+                        
+                        // Check if we actually got a controller
+                        if (!navigator.serviceWorker.controller) {
+                            console.warn("Embed: No SW controller after wait. Reloading page once...");
+                            // Check if we already reloaded (prevent infinite loops)
+                            const hasReloaded = sessionStorage.getItem('sw_reload_attempted');
+                            if (!hasReloaded) {
+                                sessionStorage.setItem('sw_reload_attempted', '1');
+                                window.location.reload();
+                                return; // Stop execution, page will reload
+                            } else {
+                                throw new Error("Service Worker failed to control page after reload");
+                            }
+                        }
                     }
+                    
+                    // Clear reload flag on successful initialization
+                    sessionStorage.removeItem('sw_reload_attempted');
 
                     // Send config to SW
                     const sw = reg.active || navigator.serviceWorker.controller;
