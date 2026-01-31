@@ -227,19 +227,7 @@
                 console.log(`Embed: Init attempt ${initAttempt}/${maxInitRetries}`);
 
                 try {
-                    const { ScramjetController } = $scramjetLoadController();
-                    const scramjet = new ScramjetController({
-                        prefix: basePath + "scramjet/",
-                        files: {
-                            wasm: 'https://cdn.jsdelivr.net/gh/Destroyed12121/Staticsj@main/JS/scramjet.wasm.wasm',
-                            all: 'https://cdn.jsdelivr.net/gh/Destroyed12121/Staticsj@main/JS/scramjet.all.js',
-                            sync: 'https://cdn.jsdelivr.net/gh/Destroyed12121/Staticsj@main/JS/scramjet.sync.js'
-                        }
-                    });
-                    if (!$scramjetLoadController) throw new Error('Scramjet controller not found');
-                    await scramjet.init();
-
-                    // Register service worker with error handling
+                    // Register service worker FIRST before Scramjet init
                     let reg;
                     try {
                         if (!('serviceWorker' in navigator)) throw new Error('Service Worker not supported');
@@ -307,6 +295,19 @@
                     if (navigator.serviceWorker?.controller && navigator.serviceWorker.controller !== sw) {
                         navigator.serviceWorker.controller.postMessage({ type: 'config', wispurl: wispUrl });
                     }
+
+                    // NOW initialize Scramjet after SW is ready
+                    const { ScramjetController } = $scramjetLoadController();
+                    const scramjet = new ScramjetController({
+                        prefix: basePath + "scramjet/",
+                        files: {
+                            wasm: 'https://cdn.jsdelivr.net/gh/Destroyed12121/Staticsj@main/JS/scramjet.wasm.wasm',
+                            all: 'https://cdn.jsdelivr.net/gh/Destroyed12121/Staticsj@main/JS/scramjet.all.js',
+                            sync: 'https://cdn.jsdelivr.net/gh/Destroyed12121/Staticsj@main/JS/scramjet.sync.js'
+                        }
+                    });
+                    if (!$scramjetLoadController) throw new Error('Scramjet controller not found');
+                    await scramjet.init();
 
                     // Setup BareMux connection with retry
                     let connection;
