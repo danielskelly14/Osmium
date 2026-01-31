@@ -251,6 +251,11 @@
 
                     const wispUrl = localStorage.getItem('proxServer') || 'wss://dash.goip.de/wisp/';
 
+                    // Double-check serviceWorker is still available
+                    if (!('serviceWorker' in navigator)) {
+                        throw new Error('Service Worker support lost during initialization');
+                    }
+
                     // Wait for SW ready with timeout
                     const swReadyPromise = navigator.serviceWorker.ready;
                     const swReadyTimeout = new Promise((_, reject) =>
@@ -263,20 +268,20 @@
                     reg.update().catch(e => console.warn("SW update check failed:", e));
 
                     // Wait for controller with timeout
-                    if (!navigator.serviceWorker.controller) {
+                    if (!navigator.serviceWorker?.controller) {
                         console.log("Embed: Waiting for SW controller...");
                         const controllerPromise = new Promise(resolve => {
                             const onControllerChange = () => {
-                                navigator.serviceWorker.removeEventListener('controllerchange', onControllerChange);
+                                navigator.serviceWorker?.removeEventListener('controllerchange', onControllerChange);
                                 resolve();
                             };
-                            navigator.serviceWorker.addEventListener('controllerchange', onControllerChange);
+                            navigator.serviceWorker?.addEventListener('controllerchange', onControllerChange);
                         });
                         const controllerTimeout = new Promise(resolve => setTimeout(resolve, 5000));
                         await Promise.race([controllerPromise, controllerTimeout]);
                         
                         // Check if we actually got a controller
-                        if (!navigator.serviceWorker.controller) {
+                        if (!navigator.serviceWorker?.controller) {
                             console.warn("Embed: No SW controller after wait. Reloading page once...");
                             // Check if we already reloaded (prevent infinite loops)
                             const hasReloaded = sessionStorage.getItem('sw_reload_attempted');
@@ -293,13 +298,13 @@
                     // Clear reload flag on successful initialization
                     sessionStorage.removeItem('sw_reload_attempted');
 
-                    // Send config to SW
-                    const sw = reg.active || navigator.serviceWorker.controller;
+                    // Send config to SW with safety checks
+                    const sw = reg.active || navigator.serviceWorker?.controller;
                     if (sw) {
                         console.log("Embed: Sending config to SW:", wispUrl);
                         sw.postMessage({ type: 'config', wispurl: wispUrl });
                     }
-                    if (navigator.serviceWorker.controller && navigator.serviceWorker.controller !== sw) {
+                    if (navigator.serviceWorker?.controller && navigator.serviceWorker.controller !== sw) {
                         navigator.serviceWorker.controller.postMessage({ type: 'config', wispurl: wispUrl });
                     }
 
