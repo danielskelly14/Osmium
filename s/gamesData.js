@@ -1,57 +1,101 @@
+// this file is for all info for all games
+// how it works:
+
+// name: [string] 
+// name of the game shown
+
+// iframe: [link or path] 
+// link to iframe page
+
+// img: [link or path]
+// link to image shown
+
+// identifier: [string] 
+// identifier for the game, used in the url to find out what game ur loading
+
+// warning: [string] 
+// warning shown before loading the game
+
+// gamePage: [link or path] 
+// link to the game page (not used and is useless)
+
+// NEW: 
+// servers: [int]
+// supplies the number of different iframe[int]: there are so that it can display all diff websites for lets say movie websites
+
+// iframe[int starting from 2]: [link or path]
+// requires servers to be set to the max [int]
+
+//full example:
+//{
+//    "name": "Example Game",
+//    "iframe": "g/load/examplegame/index.html",
+//    "img": "g/images/examplegame.png",
+//    "identifier": "examplegame",
+//    "warning": "this is an example game",
+//    "servers": 3,
+//    "iframe2": "/reactive/embed.html#https://example.com",
+//    "iframe3": "/reactive/embed.html#https://example.com/?alt=3"
+//},
+
 let games = [
     {
         "name": "Others",
         "iframe": "/reactive/embed.html#https://nowgg.fun",
         "img": "g/images/nowggfun.png",
         "identifier": "nowggfun",
-        "warning": "note that this doesn't work in firefox, and if it doesnt load, try going to the proxy and opening a website first before coming back"
+        "warning": "note that this doesn't work in firefox"
     },
     {
         "name": "Roblox",
         "iframe": "/reactive/embed.html#https://199.ip.nowgg.fun/apps/a/19900/b.html",
         "img": "https://images.rbxcdn.com/7c5fe83dffa97250aaddd54178900ea7.png",
         "identifier": "roblox",
-        "warning": "note that this doesn't work in firefox, and if it doesnt load, try going to the proxy and opening a website first before coming back"
+        "warning": "note that this doesn't work in firefox"
     },
     {
         "name": "Stumble Guys",
-        "iframe": "/reactive/embed.html#https://199.ip.nowgg.fun/apps/a/10011/b.html",
+        "iframe": "/reactive/embed.html#https://162.ip.nowgg.fun/apps/a/10011/b.html",
         "img": "https://nowgg.fun/img/stumbleguys.jpg",
         "identifier": "stumbleguys",
-        "warning": "note that this doesn't work in firefox, and if it doesnt load, try going to the proxy and opening a website first before coming back"
+        "warning": "note that this doesn't work in firefox"
     },
     {
         "name": "Fortnite",
-        "iframe": "/reactive/embed.html#https://199.ip.nowgg.fun/apps/aptoide/5874/aptoide.html?deep_link=aptoidesearch://com.epicgames.fortnite",
+        "iframe": "/reactive/embed.html#https://162.ip.nowgg.fun/apps/aptoide/5874/aptoide.html?deep_link=aptoidesearch://com.epicgames.fortnite",
         "img": "https://nowgg.fun/img/fortnite.png",
         "identifier": "fortnite",
-        "warning": "note that this doesn't work in firefox, and if it doesnt load, try going to the proxy and opening a website first before coming back"
+        "warning": "note that this doesn't work in firefox"
     },
     {
         "name": "Call of Duty Mobile",
-        "iframe": "/reactive/embed.html#https://199.ip.nowgg.fun/apps/a/10008/b.html",
+        "iframe": "/reactive/embed.html#https://162.ip.nowgg.fun/apps/a/10008/b.html",
         "img": "https://nowgg.fun/img/cod.jpg",
         "identifier": "cod",
-        "warning": "note that this doesn't work in firefox, and if it doesnt load, try going to the proxy and opening a website first before coming back"
+        "warning": "note that this doesn't work in firefox"
     },
     {
         "name": "real Geometry Dash",
-        "iframe": "/reactive/embed.html#https://199.ip.nowgg.fun/apps/robtop-games/1400/geometry-dash.html",
+        "iframe": "/reactive/embed.html#https://162.ip.nowgg.fun/apps/robtop-games/1400/geometry-dash.html",
         "img": "https://nowgg.fun/img/geodash.png",
         "identifier": "gmdash",
-        "warning": "note that this doesn't work in firefox, and if it doesnt load, try going to the proxy and opening a website first before coming back"
+        "warning": "note that this doesn't work in firefox"
     },
     {
         "name": "Movies",
         "iframe": "/reactive/embed.html#https://watch.spencerdevs.xyz/",
         "img": "assets/movies.png",
-        "identifier": "movies"
+        "identifier": "movies",
+        "warning": "note that this doesn't work in firefox",
+        "servers": 2,
+        "iframe2": "/reactive/embed.html#https://www2.movieorca.com/",
     },
     {
         "name": "Android",
-        "iframe": "/reactive/embed.html#https://199.ip.nowgg.fun/apps/uncube/7074/now.html",
+        "iframe": "/reactive/embed.html#https://162.ip.nowgg.fun/apps/uncube/7074/now.html",
         "img": "https://nowgg.fun/img/android.jpg",
-        "identifier": "android"
+        "identifier": "android",
+        "warning": "note that this doesn't work in firefox"
     },
     //alphebetical order from here
     {

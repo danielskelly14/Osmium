@@ -14,7 +14,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3761613789479778" crossorigin="anonymous"></script>
   
   <meta charset="UTF-8">
-    <title>Markos's Classroom</title>
+    <title>Marko's Classroom</title>
     <link rel="icon" href="/s/dogfavi.png">
     <link rel="stylesheet" href="../main.css">
     <script src="particles.js"></script>
@@ -74,7 +74,7 @@
       justify-content: space-between;
       background: #22222270;
       color: #fff;
-      padding: 0 20px 0 10px;
+      padding: 0 20px;
       height: 64px;
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
@@ -138,6 +138,35 @@
       background: none;
       filter: none;
     }
+    .game-bar-servers {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .server-btn {
+      padding: 6px 12px;
+      background: #ffffff1a;
+      border: 1px solid #ffffff3f;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
+      transition: all 0.15s;
+    }
+    .server-btn:hover {
+      background: #ffffff2a;
+      border-color: #ffffff6f;
+    }
+    .server-btn.active {
+      background: #ffffff4a;
+      border-color: #ffffff;
+      box-shadow: 0 0 8px #ffffff3a;
+    }
     .embed-container {
       position: relative;
       width: 100%;
@@ -193,6 +222,7 @@
       <img id="game-bar-img" src="" alt="" class="game-bar-img" style="display:none;">
       <span id="game-bar-title" class="game-bar-title"></span>
     </div>
+    <div id="server-buttons" class="game-bar-servers" style="display:none;"></div>
     <div class="game-bar-controls">
       <button onclick="refreshIframe()" title="Refresh"><img src="/s/assets/refresh.png"/></button>
       <button onclick="toggleFullscreen()" title="Fullscreen"><img src="/s/assets/fullscreen.png"/></button>
@@ -203,9 +233,58 @@
   </div>
   <script src="gamesData.js"></script>
   <script>
+    let currentServer = 1;
+    let currentGameObj = null;
+
     function getGameByIdentifier(identifier) {
       if (typeof games === 'undefined') return null;
       return games.find(g => g.identifier === identifier);
+    }
+
+    function getAllIframes(gameObj) {
+      const iframes = {};
+      if (gameObj.iframe) iframes[1] = gameObj.iframe;
+      for (let i = 2; i <= (gameObj.servers || 1); i++) {
+        if (gameObj['iframe' + i]) {
+          iframes[i] = gameObj['iframe' + i];
+        }
+      }
+      return iframes;
+    }
+
+    function loadServer(serverNum) {
+      const iframes = getAllIframes(currentGameObj);
+      if (!iframes[serverNum]) return;
+      currentServer = serverNum;
+      const iframe = document.getElementById("game");
+      // Force reload by clearing src first
+      iframe.src = '';
+      setTimeout(() => {
+        iframe.src = iframes[serverNum];
+      }, 50);
+      updateServerButtons();
+    }
+
+    function updateServerButtons() {
+      const serverButtonsContainer = document.getElementById("server-buttons");
+      const iframes = getAllIframes(currentGameObj);
+      const serverCount = Object.keys(iframes).length;
+
+      if (serverCount <= 1) {
+        serverButtonsContainer.style.display = 'none';
+        return;
+      }
+
+      serverButtonsContainer.innerHTML = '';
+      serverButtonsContainer.style.display = 'flex';
+
+      for (let i = 1; i <= serverCount; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'server-btn' + (i === currentServer ? ' active' : '');
+        btn.textContent = 'Server ' + i;
+        btn.onclick = () => loadServer(i);
+        serverButtonsContainer.appendChild(btn);
+      }
     }
 
     function setGameContent() {
@@ -217,6 +296,9 @@
       const barTitle = document.getElementById("game-bar-title");
       const warningEl = document.getElementById("warning");
       
+      currentGameObj = gameObj;
+      currentServer = 1;
+      
       if (gameObj && gameObj.warning) {
         warningEl.textContent = gameObj.warning;
       }
@@ -227,10 +309,12 @@
         barImg.alt = gameObj.name;
         barImg.style.display = '';
         barTitle.textContent = gameObj.name;
+        updateServerButtons();
       } else {
         iframe.src = "";
         barImg.style.display = 'none';
         barTitle.textContent = 'Game not found';
+        document.getElementById("server-buttons").style.display = 'none';
       }
     }
 
@@ -238,7 +322,16 @@
 
     function refreshIframe() {
       const iframe = document.getElementById("game");
-      iframe.src = iframe.src;
+      const currentSrc = iframe.src;
+      if (!currentSrc) return;
+      try {
+        const url = new URL(currentSrc, window.location.origin);
+        url.searchParams.set('_ts', Date.now().toString());
+        iframe.src = url.toString();
+      } catch (_e) {
+        // Fallback: force reload by resetting src
+        iframe.src = currentSrc;
+      }
     }
     function toggleFullscreen() {
       const iframe = document.getElementById("game");
@@ -259,8 +352,7 @@
       }
     }
   </script>
-  <p>&nbsp;</p>
 </body>
 <footer>
-  <p class="footer-text">enjoy the game, <a href="/privacy-policy.html">Privacy Policy<a></p>
+  <p class="footer-text">enjoy, <a href="/privacy-policy.html">Privacy Policy<a></p>
 </footer>
