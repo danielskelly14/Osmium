@@ -1221,21 +1221,21 @@ let games = [
     {
         "name": "Red Ball 4",
         "gamePage": "game.html?game=g/load/redball/1/index.html",
-        "iframe": "g/load/redball/1/index.html",
+        "iframe": "g/load/redball/1.html",
         "img": "g/load/redball/IMG_5315.jpeg",
         "identifier": "rb1"
     },
     {
         "name": "Red Ball 4 Volume 2",
         "gamePage": "game.html?game=g/load/redball/2/index.html",
-        "iframe": "g/load/redball/2/index.html",
+        "iframe": "g/load/redball/2.html",
         "img": "g/load/redball/IMG_5316.webp",
         "identifier": "rb2"
     },
     {
         "name": "Red Ball 4 Volume 3",
         "gamePage": "game.html?game=g/load/redball/3/index.html",
-        "iframe": "g/load/redball/3/index.html",
+        "iframe": "g/load/redball/3.html",
         "img": "g/load/redball/IMG_5317.webp",
         "identifier": "rb3"
     },
