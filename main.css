@@ -27,8 +27,8 @@ html {
 }
 
 body {
-  background-color: #0c0c0c; /* full black background requested */
-  color: #eef6ff; /* soft high-contrast text */
+  background-color: #0c0c0c;
+  color: #eef6ff;
   font-family: 'Lexend', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -110,10 +110,11 @@ body {
   top: 50%;
   transform: translateY(-50%);
   z-index: 999;
-  pointer-events: none; /* Optional: allows clicks to pass through */
+  pointer-events: none; 
 }
+/* custom ads that arent used */
 .floating-ad {
-  width: 140px;           /* Adjust size as needed */
+  width: 140px;
   height: auto;
   border-radius: 0px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -124,7 +125,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Optional: Hide on small screens */
 @media (max-width: 768px) {
   .left-center-image {
     display: none;
@@ -244,7 +244,6 @@ button:hover, .center-button:hover {
   border-color: #1a1a1acc;
 }
 
-/* Quote animation styles */
 .quote {
   display: block; /* ensure it's on its own line */
   text-align: center;
@@ -321,12 +320,11 @@ button:hover, .center-button:hover {
   z-index: 0;
 }
 
-/* semi-transparent background layer */
 .game-button::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(34, 34, 34, 0.5); /* half-transparent background */
+  background-color: rgba(34, 34, 34, 0.5); 
   z-index: -1;
   border-radius: 10px;
 }
@@ -437,7 +435,6 @@ button:hover, .center-button:hover {
   font-size: 10px;
 }
 .hard-center {
-  /* center the element both vertically and horizontally */
   position: absolute;
   top: 50%;
   left: 50%;

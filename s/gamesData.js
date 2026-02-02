@@ -44,49 +44,49 @@ let games = [
         "iframe": "/reactive/embed.html#https://nowgg.fun",
         "img": "g/images/nowggfun.png",
         "identifier": "nowggfun",
-        "warning": "note that this doesn't work in firefox"
+        "warning": "this doesn't work in firefox, also i cant remove time limits and refresh the game if you get an error"
     },
     {
         "name": "Roblox",
         "iframe": "/reactive/embed.html#https://199.ip.nowgg.fun/apps/a/19900/b.html",
         "img": "https://images.rbxcdn.com/7c5fe83dffa97250aaddd54178900ea7.png",
         "identifier": "roblox",
-        "warning": "note that this doesn't work in firefox"
+        "warning": "this doesn't work in firefox, also i cant remove time limits and refresh the game if you get an error"
     },
     {
         "name": "Stumble Guys",
         "iframe": "/reactive/embed.html#https://162.ip.nowgg.fun/apps/a/10011/b.html",
         "img": "https://nowgg.fun/img/stumbleguys.jpg",
         "identifier": "stumbleguys",
-        "warning": "note that this doesn't work in firefox"
+        "warning": "this doesn't work in firefox, also i cant remove time limits and refresh the game if you get an error"
     },
     {
         "name": "Fortnite",
         "iframe": "/reactive/embed.html#https://162.ip.nowgg.fun/apps/aptoide/5874/aptoide.html?deep_link=aptoidesearch://com.epicgames.fortnite",
         "img": "https://nowgg.fun/img/fortnite.png",
         "identifier": "fortnite",
-        "warning": "note that this doesn't work in firefox"
+        "warning": "this doesn't work in firefox, also i cant remove time limits and refresh the game if you get an error"
     },
     {
         "name": "Call of Duty Mobile",
         "iframe": "/reactive/embed.html#https://162.ip.nowgg.fun/apps/a/10008/b.html",
         "img": "https://nowgg.fun/img/cod.jpg",
         "identifier": "cod",
-        "warning": "note that this doesn't work in firefox"
+        "warning": "this doesn't work in firefox, also i cant remove time limits and refresh the game if you get an error"
     },
     {
         "name": "real Geometry Dash",
         "iframe": "/reactive/embed.html#https://162.ip.nowgg.fun/apps/robtop-games/1400/geometry-dash.html",
         "img": "https://nowgg.fun/img/geodash.png",
         "identifier": "gmdash",
-        "warning": "note that this doesn't work in firefox"
+        "warning": "this doesn't work in firefox, also i cant remove time limits and refresh the game if you get an error"
     },
     {
         "name": "Movies",
         "iframe": "/reactive/embed.html#https://watch.spencerdevs.xyz/",
         "img": "assets/movies.png",
         "identifier": "movies",
-        "warning": "note that this doesn't work in firefox",
+        "warning": "this doesn't work in firefox, also i cant remove time limits and refresh the game if you get an error",
         "servers": 2,
         "iframe2": "/reactive/embed.html#https://www2.movieorca.com/",
     },
@@ -95,7 +95,7 @@ let games = [
         "iframe": "/reactive/embed.html#https://162.ip.nowgg.fun/apps/uncube/7074/now.html",
         "img": "https://nowgg.fun/img/android.jpg",
         "identifier": "android",
-        "warning": "note that this doesn't work in firefox"
+        "warning": "this doesn't work in firefox, also i cant remove time limits and refresh the game if you get an error"
     },
     //alphebetical order from here
     {
