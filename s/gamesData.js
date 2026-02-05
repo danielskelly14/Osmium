@@ -77,14 +77,14 @@ let games = [
     {
         "name": "real Geometry Dash",
         "iframe": "/reactive/embed.html#https://162.ip.nowgg.fun/apps/robtop-games/1400/geometry-dash.html",
-        "img": "https://static.wikia.nocookie.net/b213ondiscord/images/a/a6/Geometrydash.png/revision/latest/thumbnail/width/360/height/450?cb=20200721125515",
+        "img": "https://nowgg.fun/img/geodash.png",
         "identifier": "gmdash",
         "warning": "this doesn't work in firefox, also i cant remove time limits and refresh the game if you get an error"
     },
     {
         "name": "good Geometry Dash",
-        "iframe": "/reload/geometrydash/index.html",
-        "img": "hhttps://static.wikia.nocookie.net/b213ondiscord/images/a/a6/Geometrydash.png/revision/latest/thumbnail/width/360/height/450?cb=20200721125515",
+        "iframe": "g/reload/geometrydash/index.html",
+        "img": "https://nowgg.fun/img/geodash.png",
         "identifier": "geometrydash"
     },
     {
