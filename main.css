@@ -163,6 +163,15 @@ button:hover, .center-button:hover {
   flex-wrap: wrap;
 }
 
+.setting-container {
+  margin: 10px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .center-container {
   justify-content: center;
 }
