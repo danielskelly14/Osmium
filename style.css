@@ -1,4 +1,9 @@
-/* Default Root is Midnight */
+/* 
+Copyright © 2026 Marko Vityk
+All rights reserved.
+Unauthorized copying prohibited.
+*/
+/* ts code so beautiful */
 :root {
   --background: #0a0a0a;
   --background2: #0f0f0f;
@@ -17,7 +22,7 @@
   --panel-radius: clamp(10px, calc(16px * var(--ui-scale)), 20px);
 }
 
-body[theme="midnight"] { /* og Osmium theme */
+body[theme="midnight"] { /* og markos classroom! theme */
   --background: #0a0a0a;
   --background2: #0f0f0f;
   --background3: #202020;

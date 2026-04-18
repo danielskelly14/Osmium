@@ -6,7 +6,7 @@
   <meta property="og:title" content="Osmium" />
   <meta property="og:description" content="Unified dashboard for games, apps, and proxy." />
   <title>Osmium</title>
-  <link rel="icon" href="/s/logo.png" />
+  <link rel="icon" href="/logo.png" />
   <link rel="stylesheet" href="/style.css" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QYPYXGT59Q"></script>
@@ -18,8 +18,8 @@
   </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3761613789479778" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script defer src="/s/text.js"></script>
-  <script defer src="/s/quote.js"></script>
+  <script defer src="/text.js"></script>
+  <script defer src="/quote.js"></script>
   <script>
     function escapeBlobAttr(value) {
       return String(value)
@@ -97,7 +97,7 @@
     <nav>
       <div class="top">
         <a href="#" class="logo" onclick="openPage('home-page'); return false;">
-          <img src="/s/logo.png" alt="Osmium">
+          <img src="/logo.png" alt="Osmium">
           <h2 class="logo-name">Osmium</h2>
           <h6>v3</h6>
         </a>
@@ -192,7 +192,7 @@
         </div>
         <div class="game-list apps-list-grid">
           <button onclick="proxyNavigate('https://watch.spencerdevs.xyz/')" class="game-btn app-btn" data-static-app="true" data-app-title="Movies" type="button">
-            <img src="/s/assets/movies.png" alt="Movies">
+            <img src="/assets/movies.png" alt="Movies">
             <div class="content"><p class="title">Movies</p></div>
           </button>
           <button onclick="proxyNavigate('https://162.ip.nowgg.fun/apps/uncube/7074/now.html')" class="game-btn app-btn" data-static-app="true" data-app-title="Android" type="button">
@@ -200,7 +200,7 @@
             <div class="content"><p class="title">Android</p></div>
           </button>
           <button onclick="proxyNavigate('https://nowgg.fun')" class="game-btn app-btn" data-static-app="true" data-app-title="Others" type="button">
-            <img src="/s/g/images/nowggfun.png" alt="Others">
+            <img src="/g/images/nowggfun.png" alt="Others">
             <div class="content"><p class="title">Others</p></div>
           </button>
         </div>
@@ -223,14 +223,14 @@
             <input type="text" id="proxy-address" placeholder="Search or enter URL" autocomplete="off">
           </div>
           <div class="shortcuts">
-            <button onclick="proxyNavigate('https://google.com/')" class="shortcut"><img class="shortcut-image" src="/s/assets/google.png" alt=""><p>Google</p></button>
-            <button onclick="proxyNavigate('https://youtube.com/')" class="shortcut"><img class="shortcut-image" src="/s/assets/youtube.png" alt=""><p>YouTube</p></button>
-            <button onclick="proxyNavigate('https://discord.com/')" class="shortcut"><img class="shortcut-image" src="/s/assets/discord.png" alt=""><p>Discord</p></button>
-            <button onclick="proxyNavigate('https://x.com/')" class="shortcut"><img class="shortcut-image" src="/s/assets/twitter.png" alt=""><p>Twitter</p></button>
-            <button onclick="proxyNavigate('https://github.com/')" class="shortcut"><img class="shortcut-image" src="/s/assets/github.png" alt=""><p>GitHub</p></button>
-            <button onclick="proxyNavigate('https://c.ai/')" class="shortcut"><img class="shortcut-image" src="/s/assets/characterai.png" alt=""><p>character.ai</p></button>
-            <button onclick="proxyNavigate('https://gemini.google.com/')" class="shortcut"><img class="shortcut-image" src="/s/assets/gemini.png" alt=""><p>Gemini</p></button>
-            <button onclick="proxyNavigate('https://poki.com/')" class="shortcut"><img class="shortcut-image" src="/s/assets/poki.png" alt=""><p>Poki</p></button>
+            <button onclick="proxyNavigate('https://google.com/')" class="shortcut"><img class="shortcut-image" src="/assets/google.png" alt=""><p>Google</p></button>
+            <button onclick="proxyNavigate('https://youtube.com/')" class="shortcut"><img class="shortcut-image" src="/assets/youtube.png" alt=""><p>YouTube</p></button>
+            <button onclick="proxyNavigate('https://discord.com/')" class="shortcut"><img class="shortcut-image" src="/assets/discord.png" alt=""><p>Discord</p></button>
+            <button onclick="proxyNavigate('https://x.com/')" class="shortcut"><img class="shortcut-image" src="/assets/twitter.png" alt=""><p>Twitter</p></button>
+            <button onclick="proxyNavigate('https://github.com/')" class="shortcut"><img class="shortcut-image" src="/assets/github.png" alt=""><p>GitHub</p></button>
+            <button onclick="proxyNavigate('https://c.ai/')" class="shortcut"><img class="shortcut-image" src="/assets/characterai.png" alt=""><p>character.ai</p></button>
+            <button onclick="proxyNavigate('https://gemini.google.com/')" class="shortcut"><img class="shortcut-image" src="/assets/gemini.png" alt=""><p>Gemini</p></button>
+            <button onclick="proxyNavigate('https://poki.com/')" class="shortcut"><img class="shortcut-image" src="/assets/poki.png" alt=""><p>Poki</p></button>
           </div>
         </div>
 <div id="proxy-embed-container" style="display:none; flex-direction:column; height:100%;">
@@ -404,7 +404,6 @@
                 <button id="enableBlobCloak" onclick="enableBlobCloak()">Enable</button>
                 <button id="disableBlobCloak" onclick="disableBlobCloak()">Disable</button>
               </div>
-              <p id="index-blob-status">Current: Disabled</p>
             </div>
             <div class="setting-card">
               <h2>Tab Cloaking</h2>
@@ -470,7 +469,7 @@
     </div>
   </div>
 
-  <script src="/s/gamesData.js"></script>
+  <script src="/g/load/gamesData.js"></script>
   <script src="/n/gamesData.js"></script>
   <script>
 
@@ -482,7 +481,7 @@ let activeProxyTabId = null;
 let nextProxyTabId = 1;
 let activeEmbedTabId = null;
 const embedTabServerState = {};
-const DEFAULT_GAME_IMAGE = '/s/logo.png';
+const DEFAULT_GAME_IMAGE = '/logo.png';
 
 
 function placeholderIcon(label) {
@@ -492,13 +491,13 @@ function placeholderIcon(label) {
 function normalizeAssetPath(path) {
   if (!path) return '';
   if (/^(https?:|data:|blob:|\/)/i.test(path)) return path;
-  return `/s/${path.replace(/^\/+/, '')}`;
+  return `/${path.replace(/^\/+/, '')}`;
 }
 
 function normalizeGameUrl(path) {
   if (!path) return 'about:blank';
   if (/^(https?:|about:|blob:|data:|\/)/i.test(path)) return path;
-  return `/s/${path.replace(/^\/+/, '')}`;
+  return `/${path.replace(/^\/+/, '')}`;
 }
 
 function normalizeNoImageGameUrl(path) {
@@ -726,32 +725,70 @@ function openPage(pageId) {
   }
 }
 
-function renderGames() {
-  const gameList = document.getElementById('game-list');
-  gameList.innerHTML = '';
-  
-  let games = getCurrentGameSource().filter(game => !game.app); // Hide apps from games list
-  
-  // Bring pinned games to the top
-  games.sort((a, b) => (b.pin === true ? 1 : 0) - (a.pin === true ? 1 : 0));
+let gamesPagination = {
+  currentFiltered: [],
+  renderedCount: 0,
+  pageSize: 60,
+  observer: null
+};
 
-  games.forEach(game => {
+function renderGames(reset = true) {
+  const gameList = document.getElementById('game-list');
+  const searchInput = document.getElementById('searchInput');
+  const term = (searchInput ? searchInput.value || '' : '').toLowerCase();
+
+  // Reset happens by default or when passing true
+  if (reset === true || typeof reset !== 'boolean') {
+    gameList.innerHTML = '';
+    gamesPagination.renderedCount = 0;
+    
+    let games = getCurrentGameSource().filter(game => !game.app);
+    // Bring pinned games to the top
+    games.sort((a, b) => (b.pin === true ? 1 : 0) - (a.pin === true ? 1 : 0));
+    
+    gamesPagination.currentFiltered = games.filter(game => {
+      const title = game.title || '';
+      return title.toLowerCase().includes(term);
+    });
+
+    if (!gamesPagination.observer) {
+      gamesPagination.observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          gamesPagination.observer.unobserve(entries[0].target);
+          entries[0].target.remove();
+          renderGames(false);
+        }
+      }, { rootMargin: '200px' });
+    } else {
+      gamesPagination.observer.disconnect();
+    }
+  }
+
+  const { currentFiltered, renderedCount, pageSize } = gamesPagination;
+  const toRender = currentFiltered.slice(renderedCount, renderedCount + pageSize);
+
+  toRender.forEach(game => {
     const card = document.createElement('a');
     card.className = 'game-btn';
     card.innerHTML = `<img src='${game.img || DEFAULT_GAME_IMAGE}' alt='${game.title}' loading='lazy' onerror="this.src='${DEFAULT_GAME_IMAGE}'"><div class='content'><p class='title'>${game.title}</p></div>`;
     card.onclick = () => addGameTab(game);
     gameList.appendChild(card);
   });
+
+  gamesPagination.renderedCount += toRender.length;
+
+  if (gamesPagination.renderedCount < currentFiltered.length) {
+    const sentinel = document.createElement('div');
+    sentinel.className = 'scroll-sentinel';
+    sentinel.style.width = '100%';
+    sentinel.style.height = '20px';
+    gameList.appendChild(sentinel);
+    gamesPagination.observer.observe(sentinel);
+  }
 }
 
 function filterGames() {
-  const searchInput = document.getElementById('searchInput');
-  const term = (searchInput.value || '').toLowerCase();
-  document.querySelectorAll('#game-list .game-btn').forEach(btn => {
-    const title = btn.querySelector('.title').textContent.toLowerCase();
-    const matchesSearch = title.includes(term);
-    btn.style.display = matchesSearch ? '' : 'none';
-  });
+  renderGames(true);
 }
 
 function updateNoImageToggleButton() {
@@ -1344,7 +1381,7 @@ function setTitle(title) {
 
 function setFavicon(icon) {
   const link = document.querySelector("link[rel='icon']");
-  if (link) link.href = icon || '/s/logo.png';
+  if (link) link.href = icon || '/logo.png';
   const tab = JSON.parse(localStorage.getItem('tab') || '{}');
   if (icon) tab.icon = icon; else delete tab.icon;
   localStorage.setItem('tab', JSON.stringify(tab));
@@ -1352,19 +1389,19 @@ function setFavicon(icon) {
 
 const INDEX_DEFAULT_CLOAK = {
   title: "Osmium",
-  icon: '/s/logo.png'
+  icon: '/logo.png'
 };
 
 const INDEX_CLOAKS = {
-  google: { title: 'Google', icon: '/s/assets/google.ico' },
-  classroom: { title: 'Google Classroom', icon: '/s/assets/classroom.ico' },
-  drive: { title: 'Google Drive', icon: '/s/assets/drive.png' },
-  gmail: { title: 'Inbox (1) - Gmail', icon: '/s/assets/gmail.ico' },
-  ixl: { title: 'IXL | Math, Language Arts, Science, Social Studies, and Spanish', icon: '/s/assets/ixl.png' },
-  meet: { title: 'Meet', icon: '/s/assets/meet.png' },
-  docs: { title: 'Google Docs', icon: '/s/assets/docs.ico' },
-  sheets: { title: 'Google Sheets', icon: '/s/assets/sheets.ico' },
-  slides: { title: 'Google Slides', icon: '/s/assets/slides.ico' }
+  google: { title: 'Google', icon: '/assets/google.ico' },
+  classroom: { title: 'Google Classroom', icon: '/assets/classroom.ico' },
+  drive: { title: 'Google Drive', icon: '/assets/drive.png' },
+  gmail: { title: 'Inbox (1) - Gmail', icon: '/assets/gmail.ico' },
+  ixl: { title: 'IXL | Math, Language Arts, Science, Social Studies, and Spanish', icon: '/assets/ixl.png' },
+  meet: { title: 'Meet', icon: '/assets/meet.png' },
+  docs: { title: 'Google Docs', icon: '/assets/docs.ico' },
+  sheets: { title: 'Google Sheets', icon: '/assets/sheets.ico' },
+  slides: { title: 'Google Slides', icon: '/assets/slides.ico' }
 };
 
 function applyIndexCloakSelection(key) {
@@ -1563,7 +1600,7 @@ function addIndexCustomWisp() {
 
 function resetTab() {
   setTitle("Osmium");
-  setFavicon('/s/logo.png');
+  setFavicon('/logo.png');
   localStorage.setItem('tab', JSON.stringify({}));
 }
 
