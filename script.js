@@ -60,7 +60,7 @@
             adScript.id = 'main-ad-script';
             adScript.async = true;
             adScript.dataset.zone = '10557680';
-            adScript.src = 'https://al5sm.com/tag.min.js';
+            adScript.src = ;
             (document.body || document.documentElement).appendChild(adScript);
         } catch (e) {
             // ignore ad script errors
